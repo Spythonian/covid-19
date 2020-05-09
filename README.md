@@ -1,30 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+## Covid-19 App: Symptoms Tracker, Contact Tracing, Information and Notifications.
 
 ## Getting Started
 
-First, run the development server:
+The major features and functions of the app are listed below:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Information Centre
+- Symptoms Tracker
+- Contact Tracing via Digital Footprints
+- Help/Contact/Enquiries/Reporting
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The App might likely be multilingual having English and other selected languages.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Details
 
-## Learn More
+Information Centre
 
-To learn more about Next.js, take a look at the following resources:
+The Information Centre would have content in English and other selected languages that contain the following:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Text Information
+- News and Updates
+- Podcasts
+- Videos
+- How-To
+- FAQs
 
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
+This would provide information which covers topics like Self-Isolation Social Distancing, Hygiene, Prevention, Care, Screening Tips, and Government communiques.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Symptoms Tracker
