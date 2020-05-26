@@ -5,7 +5,10 @@ import { Line, Bar } from 'react-chartjs-2';
 
 import styles from './Charts.module.css';
 
-export default function Charts() {
+export default function Charts({
+  data: { confirmed, recovered, deaths },
+  country,
+}) {
   const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
@@ -40,5 +43,30 @@ export default function Charts() {
     />
   ) : null;
 
-  return <div className={styles.container}>{lineChart}</div>;
+  const barChart = confirmed ? (
+    <Bar
+      data={{
+        labels: ['Infected', 'Recovered', 'Deaths'],
+        datasets: [
+          {
+            label: 'People',
+            backgroundColor: [
+              'rgba(0, 0, 255, 0.5)',
+              'rgba(0, 255, 0, 0.5)',
+              'rgba(255, 0, 0, 0.5)',
+            ],
+            data: [confirmed.value, recovered.value, deaths.value],
+          },
+        ],
+      }}
+      options={{
+        legend: { display: false },
+        title: { display: true, text: `Current country is ${country}` },
+      }}
+    />
+  ) : null;
+
+  return (
+    <div className={styles.container}>{country ? barChart : lineChart}</div>
+  );
 }
