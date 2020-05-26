@@ -35,6 +35,19 @@ class Home extends React.Component {
           <CountryPicker />
           <Charts />
         </main>
+        {/* <style jsx>{`
+          .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+          }
+        `}</style>
+        <style jsx global>{`
+          body {
+            background-color: rgb(250, 250, 250);
+          }
+        `}</style> */}
       </div>,
     ];
   }
