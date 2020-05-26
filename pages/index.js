@@ -9,6 +9,7 @@ import { fetchData } from '../api/index';
 class Home extends React.Component {
   state = {
     data: {},
+    country: '',
   };
 
   async componentDidMount() {
@@ -18,36 +19,54 @@ class Home extends React.Component {
     // console.log(data);
   }
 
+  handleCountryChange = async (country) => {
+    const fetchedData = await fetchData(country);
+    this.setState({ data: fetchedData, country: country });
+  };
+
   render() {
-    const { data } = this.state;
+    const { data, country } = this.state;
 
     return [
       <div>
         <Head>
-          <title>Create Next App</title>
+          <title>Covid-19 Tracking App</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <div>
+          <div className="container">
             <h1>This is the home interface</h1>
           </div>
+          <img src="/vercel.svg" alt="Covid-19" className="covidimage" />
           <Cards data={data} />
-          <CountryPicker />
-          <Charts />
+          <CountryPicker handleCountryChange={this.handleCountryChange} />
+          <Charts data={data} country={country} />
         </main>
-        {/* <style jsx>{`
+        <style jsx>{`
           .container {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
           }
+          @media (max-width: 770px) {
+            .container {
+              margin: 0 10%;
+            }
+            .covidimage {
+              width: 100%;
+            }
+          }
+          /* .covidimage {
+            width: 300px;
+            margin-top: 50px;
+          } */
         `}</style>
         <style jsx global>{`
           body {
             background-color: rgb(250, 250, 250);
           }
-        `}</style> */}
+        `}</style>
       </div>,
     ];
   }
